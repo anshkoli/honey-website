@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HivePure - About Us</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">HivePure</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="process.html">Our Process</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="checkout.html" class="cart-icon">🛒 <span id="cart-count">0</span></a>
+    <div class="menu-icon">&#9776;</div>
+  </nav>
+
+  <!-- About Us Content -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At HivePure, we are passionate about beekeeping and delivering pure, natural products. Our mission is to promote sustainable farming and bee conservation while providing you with the highest quality honey and bee products.</p>
+    <p>Founded in 2025, we work closely with local beekeepers to ensure ethical practices and environmental responsibility.</p>
+
+    <!-- Video Section -->
+    <div class="video-section">
+      <h3>Our Story in Motion</h3>
+      <div class="video-container">
+        <div class="video-scroll">
+          <video controls>
+            <source src="videos/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <video controls>
+            <source src="videos/video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <video controls>
+            <source src="videos/video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <button class="scroll-button left" onclick="scrollVideos(-1)">&#10094;</button>
+      <button class="scroll-button right" onclick="scrollVideos(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- JavaScript for Video Scrolling -->
+  <script>
+    function scrollVideos(direction) {
+      const videoScroll = document.querySelector('.video-scroll');
+      const scrollAmount = 300; // Adjust scroll distance
+      videoScroll.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>

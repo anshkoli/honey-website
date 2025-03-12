@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HivePure - About Us</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">HivePure</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="process.html">Our Process</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-icon">&#9776;</div> <!-- Hamburger Icon -->
+  </nav>
+
+  <!-- Our Process Content -->
+  <section id="process">
+    <h2>Our Process</h2>
+    <p>We follow a meticulous process to ensure the highest quality honey:</p>
+    <ul>
+      <li><strong>Harvesting:</strong> Honey is carefully extracted from hives without harming the bees.</li>
+      <li><strong>Filtering:</strong> Raw honey is gently filtered to remove impurities while retaining nutrients.</li>
+      <li><strong>Bottling:</strong> Honey is bottled in eco-friendly packaging to preserve its natural goodness.</li>
+      <li><strong>Sustainability:</strong> We prioritize bee conservation and sustainable farming practices.</li>
+    </ul>
+  </section>
+  <script>
+    // Hamburger Menu Toggle
+    const menuIcon = document.querySelector('.navbar .menu-icon');
+    const navLinks = document.querySelector('.navbar .nav-links');
+  
+    menuIcon.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

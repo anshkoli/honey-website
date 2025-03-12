@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HivePure - Products</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">HivePure</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="process.html">Our Process</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="checkout.html" class="cart-icon">🛒 <span id="cart-count">0</span></a>
+    <div class="menu-icon">&#9776;</div>
+  </nav>
+
+  <!-- Products Content -->
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/honey1.jpg" alt="Raw Wildflower Honey">
+        <h3>Raw Wildflower Honey</h3>
+        <p>500/-</p>
+        <button onclick="addToCart('Raw Wildflower Honey', 500)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/beeswax.jpg" alt="Organic Beeswax Candles">
+        <h3>Organic Beeswax Candles</h3>
+        <p>600/-</p>
+        <button onclick="addToCart('Organic Beeswax Candles', 600)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/propolis.jpg" alt="Propolis Tincture">
+        <h3>Propolis Tincture</h3>
+        <p>700/-</p>
+        <button onclick="addToCart('Propolis Tincture', 700)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Cart Functionality -->
+  <script>
+    let cart = [];
+
+    // Function to add items to the cart
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCartCount();
+      alert(`${name} added to cart!`);
+    }
+
+    // Function to update the cart count
+    function updateCartCount() {
+      document.getElementById('cart-count').textContent = cart.length;
+    }
+
+    // Save cart to localStorage when leaving the page
+    window.onbeforeunload = () => {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    };
+
+    // Load cart from localStorage when the page loads
+    window.onload = () => {
+      const savedCart = localStorage.getItem('cart');
+      if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartCount();
+      }
+    };
+  </script>
+</body>
+</html>
